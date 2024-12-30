@@ -1,0 +1,57 @@
+.option101-rectangle7 {
+    top: 160px;
+    left: 642px;
+    width: 1200px;
+    height: 625px;
+    position: absolute;
+}
+
+#toolArea {
+    width: 90%;
+    height: 100%;
+    background: #FFFFD3;
+    border: 8px rgba(255, 255, 255, 0.93) solid;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: auto;
+    position: relative;
+}
+
+@media (max-width: 1536px) {
+    .option101-rectangle7 {
+        top: 150px;
+        left: 625px;
+        width: 1200px;
+        height: 600px;
+        position: absolute;
+    }
+
+    #toolArea {
+        width: 75%;
+        height: 90%;
+        position: relative;
+    }
+}
+
+@media (max-width: 1024px) {
+    .option101-container {
+        padding: 20px;
+    }
+
+    #toolArea {
+        width: 80%;
+        height: 80%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+
+    #toolArea {
+        width: 80%;
+        height: 80%;
+    }
+
+}
+

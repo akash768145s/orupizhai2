@@ -1,0 +1,358 @@
+/* App.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333333;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/*=============Intro Game Section*/
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.intro-image {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.start-game-gif {
+    position: absolute;
+    top: 50%;
+    /* Center it vertically */
+    left: 50%;
+    /* Center it horizontally */
+    transform: translate(-50%, -50%);
+    /* Fine-tune the centering */
+    width: 200px;
+    /* Adjust the size of the GIF */
+    cursor: pointer;
+    /* Change the cursor to pointer on hover */
+    transition: transform 0.2s ease-in-out;
+}
+
+.start-game-gif:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    /* Slightly enlarge on hover */
+}
+
+.top-left-gif {
+    position: absolute;
+    top: 30px;
+    /* Distance from the top */
+    left: 10px;
+    /* Distance from the left */
+    width: 60px;
+    /* Size of the GIF */
+    cursor: pointer;
+    /* Change cursor to pointer */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* New styles for second image */
+.second-image-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Second image style */
+.second-image {
+    width: 800px;
+    /* Make the image occupy a larger portion of the container */
+
+    /* Allow a larger maximum width */
+    height: 400px;
+    /* Increase height for a bigger display */
+    object-fit: fit;
+    /* Ensures the image fills the dimensions while maintaining its aspect ratio */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    color: white;
+    border: 2px solid white;
+    /* Add a white circular border */
+    border-radius: 50%;
+    /* Make it a circle */
+    width: 40px;
+    /* Increased size */
+    height: 40px;
+    /* Increased size */
+    font-size: 20px;
+    /* Slightly larger font */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+    /* Ensure it's above the image */
+}
+
+/*===Start Game ====*/
+
+
+.game-background {
+    background-image: url('images/start.png');
+    /* Replace with your actual image path */
+    background-size: contain;
+    /* Ensure the full image is visible without cutting */
+    background-position: top center;
+    /* Align the image to the top and center */
+    background-repeat: no-repeat;
+    /* Prevent repeating */
+    height: 100vh;
+    /* Full viewport height */
+    width: 100vw;
+    /* Full viewport width */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    /* Ensure text is readable on the background */
+    overflow: hidden;
+    /* Prevent overflow if content exceeds bounds */
+}
+
+.text-container {
+    width: 265px;
+    /* Fixed width */
+    height: 131px;
+    /* Fixed height */
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    background-color: transparent;
+    /* Transparent background */
+    color: black;
+    /* Set text color to black */
+    font-weight: bold;
+    /* Make the text bold */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    /* Clamp text to 5 lines */
+    white-space: normal;
+    position: fixed;
+    /* Isolated from other layout elements */
+    bottom: 80px;
+    /* Move it up slightly */
+    left: 64%;
+    /* Move it slightly to the right */
+    transform: translateX(-50%);
+    /* Adjust horizontal centering */
+}
+
+
+
+/* Timer */
+.timer {
+    position: fixed;
+    /* Fix the position relative to the viewport */
+    bottom: 50px;
+    /* Move it to the bottom of the screen */
+    left: 140px;
+    /* Move it to the left of the screen */
+    font-weight: bold;
+    /* Make the text bold */
+    font-size: 30px;
+    /* Adjust font size as needed */
+    color: black;
+    /* Change the text color to white for visibility */
+}
+
+/*===End Game ====*/
+.final-score-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1000;
+}
+
+.final-score-image {
+    width: 600px;
+    /* Make the image bigger */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.final-score {
+    position: absolute;
+    top: 59%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    /* Increase font size */
+    font-weight: bold;
+    color: black;
+    /* Change text color to make it visible over the image */
+}
+
+
+
+
+
+/*===Games ====*/
+
+.game-container {
+    text-align: center;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 700px;
+    animation: pop-in 0.6s ease-out;
+}
+
+@keyframes pop-in {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    background: -webkit-linear-gradient(45deg, #ff6f61, #de6262);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+}
+
+.sentence {
+    font-size: 1.4rem;
+    color: #444;
+    margin-bottom: 30px;
+    /* Reduced margin for closer spacing */
+    margin-top: -80px;
+    /* Moves the div higher */
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+
+.word {
+    cursor: pointer;
+    padding: 8px 12px;
+    margin: 0 5px;
+    display: inline-block;
+    background: #ffed85;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+    color: #333;
+    transform: scale(1);
+}
+
+.word:hover {
+    background: #f5cf43;
+    color: white;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.word:active {
+    background: #e17055;
+    color: white;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+@keyframes feedback-blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+p.score {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #34495e;
+    margin: 10px 0;
+}
+
+p.attempts {
+    font-size: 1.2rem;
+    color: #8e44ad;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #1f618d;
+    transform: translateY(0);
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .sentence {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
