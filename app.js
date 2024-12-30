@@ -177,9 +177,13 @@ function App() {
               {timer}
             </div>
 
-            {/* Show final image and score when game is over */}
             {gameOver && (
-              <div className="final-score-container">
+              <div
+                className="final-score-container"
+                onClick={() => window.location.reload()}
+              >
+                {" "}
+                {/* Trigger page reload */}
                 <img
                   src="images/end.png" // Replace with your final score image path
                   alt="Final Score"
@@ -191,7 +195,6 @@ function App() {
                 </div>
               </div>
             )}
-
           </div>
         </React.Fragment>
       )}
